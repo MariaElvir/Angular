@@ -1,0 +1,25 @@
+<div class="container text-center">
+  <nav style="background-color: rgba(10, 10, 68, 0.774); height: 50px; padding: 7px;">
+    <h3 style="color: white;">CALCULADORA</h3>
+  </nav>
+  <br>
+  <div class="row">
+    <div class="col-6">
+      <input #numero1 type="text" class="form-control">
+      <br>
+      <input #numero2 type="text" class="form-control">
+    </div>
+    <div class="col-6" style="background-color: rgba(132, 207, 230, 0.774); width: 558px; justify-content: center; padding:35px; ">
+      {{operacion}}
+    </div>
+  </div>
+  <br>
+  <div class="col-6">
+  <button class="btn btn-primary" (click)='operacionMatematica(numero1.value, numero2.value)'>Empezar</button>
+  </div>
+</div>
+<br>
+<div class="container">
+  <h6>RESULTADOS</h6>
+  <p>La suma es: {{resultado}}</p>
+</div>
