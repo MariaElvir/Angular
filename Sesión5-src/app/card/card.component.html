@@ -1,0 +1,18 @@
+<div class="container text-center">
+  <div class="row">
+    <div class="col" *ngFor="let datos of dataEntrada">
+      <div class="card" style="width: 18rem; height: 450px;">
+        <img appImagenRota [src]="datos?.image" class="card-img-top" alt="...">
+        <div class="card-body" >
+            <h3>{{datos?.title}}</h3>
+          <p class="card-text">{{datos.subtitule}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- <div  *ngFor="let datos of dataEntrada">
+    {{datos.image}}
+        </div> -->
+
