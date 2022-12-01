@@ -1,0 +1,76 @@
+<div class="container">
+    <form (ngSubmit)="submit()" #forma="ngForm">
+        <h3>Inicio de sesión - Formulario template</h3>
+        <hr />
+        <label for="name"><b>NOMBRE</b></label>
+        <input type="text"
+            #name="ngModel"
+            [(ngModel)]="register.name"
+            placeholder="Introduzca su nombre"
+            name="name"
+            minlength="10"
+            class="form-control"
+            required
+            [ngClass]="{'is-valid': !name.invalid, 'is-invalid': name.invalid}"
+          />
+          <div class="invalid-feedback" *ngIf="name.invalid && (name.dirty || name.touched)">
+            <div *ngIf="name.hasError('minlength')">
+                Debe tener minimo 10 caracteres mínimo
+            </div>
+            <div *ngIf="name.hasError('required')">
+                Introduzca un nombre válido por favor
+            </div>
+        </div>
+        <label for="email"><b>Correo electrónico</b></label>
+        <input
+            type="email"
+            #email="ngModel"
+            [(ngModel)]="register.email"
+            placeholder="Introduzca la correo electrónico"
+            name="email"
+            class="form-control"
+            required
+            [ngClass]="{'is-valid': !email.invalid, 'is-invalid': email.invalid}"
+            pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+          />
+  
+        <div class="invalid-feedback" *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div *ngIf="email.errors && email.hasError('pattern')">
+                (el correo electrónico no es valido)
+            </div>
+            <div *ngIf="name.hasError('required')">
+              Introduzca su correo electronico válido por favor
+          </div>
+        </div>
+        <label for="psw"><b>Mensaje</b></label>
+        <textarea
+            type="text"
+            placeholder="Introduzca su mensaje"
+            #mensaje="ngModel"
+            [(ngModel)]="register.mensaje"
+            name="mensaje"
+            class="form-control"
+            maxlength="500"
+            required
+            [ngClass]="{'is-valid': !mensaje.invalid, 'is-invalid': mensaje.invalid}"
+          ></textarea>
+        <div class="invalid-feedback" *ngIf="mensaje.invalid && (mensaje.dirty || mensaje.touched)">
+            <div *ngIf="mensaje.hasError('required')">
+                El mensaje no puede quedar vacío
+            </div>
+            <div *ngIf="mensaje.hasError('maxlength')">
+              Debe tener maximo 500 caracteres mínimo
+          </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg">
+                <button type="submit" (click)="submit()" class="btn btn-primary" [disabled]="!forma.valid">Registrarse</button>
+            </div>
+        </div>
+    </form>
+    
+    <div *ngIf="element == true">
+      <p>Todos los controles se encuentran correctamente ingresados</p></div>
+    
+  </div>
