@@ -10,10 +10,4 @@ export class PadreComponent {
   cajaPadre: string ="";
 
   constructor() { }
-
-  agregar(){
-    this.cajaPadre="";
-  }
-  
-
 }
