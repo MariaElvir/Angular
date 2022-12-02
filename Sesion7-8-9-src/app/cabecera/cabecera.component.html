@@ -1,0 +1,32 @@
+<!-- NavBar -->
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">CERTUS</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+        aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-md-0 me-5">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/escuelamain']">Principal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  [routerLink]="['/alumno']">Alumnos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#" [routerLink]="['/usuario']">Usuario</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#" [routerLink]="['/datos']">Datos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#" [routerLink]="['/alumno/form']">Ingresar alumno</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#" [routerLink]="['/cursos/form']">Ingresar curso</a>
+          </li>
+        </ul>
+        <button type="button" name="ver"  class="btn btn-danger btn-sm">Ver efecto</button>
+      </div>
+    </div>

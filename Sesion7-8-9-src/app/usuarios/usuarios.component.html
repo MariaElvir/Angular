@@ -1,0 +1,26 @@
+<app-cabecera></app-cabecera>
+<div class="card border-primary mb-3">
+    <div class="card-header">Cursos</div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Listado de Usuarios</h5>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>nombre</th>
+            <th>direccion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of usuarios">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.address?.street}}</td>
+          </tr>
+        </tbody>
+      </table>
+  
+    </div>
+  </div>
+<app-pie></app-pie>
+

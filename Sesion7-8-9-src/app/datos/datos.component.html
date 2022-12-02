@@ -1,0 +1,29 @@
+<app-cabecera></app-cabecera>
+<div class="card border-primary mb-3">
+    <div class="card-header">Cursos</div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Listado de Usuarios</h5>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>UserId</th>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of datos">
+            <td>{{ user.userId }}</td>
+            <td>{{ user.id }}</td>
+            <td>{{ user.title }}</td>
+            <td>{{ user.body }}</td>
+          </tr>
+        </tbody>
+      </table>
+  
+    </div>
+  </div>
+<app-pie></app-pie>
+
+

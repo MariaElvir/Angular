@@ -1,0 +1,44 @@
+<app-cabecera></app-cabecera>
+<div class="container">
+<div class="card border-primary mb-3">
+    <div class="card-header">ALUMNOS</div>
+    <div class="card-body text-primary">
+      <h5 class="card-title" style="font-size: 40px;">Listado de Alumno</h5>
+      <div class="my-2 text-left">
+        <button class="btn btn-rounded btn-success" type="button" style="width: 250px; " [routerLink]="['/alumno/form']">
+          INGRESAR ALUMNO
+        </button>
+      </div>
+      <table class="table table-bordered table-hover" style="text-align: center;">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>CORREO</th>
+            <th>FECHA DE NACIMIENTO</th>
+            <th>EDITAR</th>
+            <th>ELIMINAR</th>
+          </tr>
+        </thead>
+        <tbody class="table-info">
+          <tr *ngFor="let person of alumnos">
+            <td>{{ person.id }}</td>
+            <td>{{ person.nombre }}</td>
+            <td>{{ person.correo }}</td>
+            <td>{{ person.fechaNac }}</td>
+            <td>
+              <button type="button" name="editar" [routerLink]="['/alumno/form', person.id]"  class="btn btn-info btn-sm">Editar</button>
+            </td>
+            <td>
+              <button type="button" name="eliminar"  (click)='delete(person)' class="btn btn-danger btn-sm">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+    </div>
+  </div>
+</div>
+<app-pie></app-pie>
+
+
