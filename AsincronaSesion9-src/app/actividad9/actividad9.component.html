@@ -1,0 +1,30 @@
+<style>
+    *{
+        text-align: center;
+    }
+    img{
+        height: 50%;
+        width: 30%;
+    }
+</style>
+<div class="container">
+    <h1>Bienvenido a la aplicación de Interceptores - Certus!</h1>
+    <img src="https://sg.com.mx/sites/default/files/styles/570x500/public/images/angular-logo.png?itok=_4hR0cNu" class="card-img-top" alt="...">  
+    <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of datos, let i = index">
+            <td>{{ i+1 }}</td>
+            <td hidden>{{ user.title }}</td>
+            <td>{{ user.title }}</td>
+            <td>{{ user.body }}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
