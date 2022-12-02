@@ -1,0 +1,19 @@
+div{
+    padding-left: 10px;
+    text-align: center;
+    margin: 30px;
+}
+table {
+    width: 80%;
+    border: 1px solid #000;
+    margin-top: 1%;
+  }
+  
+  th, td {
+    text-align: left;
+    border: 1px solid #000;
+   border-collapse: collapse;
+   padding: 0.3em;
+   caption-side: bottom;
+  }
+  
