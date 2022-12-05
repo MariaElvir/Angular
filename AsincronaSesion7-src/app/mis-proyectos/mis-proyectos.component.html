@@ -1,0 +1,94 @@
+<div class="container">
+    <form (ngSubmit)="submit()" #formTemlate="ngForm">
+        <h3>Inicio de sesión - Formulario template</h3>
+        <hr />
+        <div class="col-md-10">
+            <label for="name" class="form-label"><b>Nombre</b></label>
+            <input type="text"
+                #name="ngModel"
+                [(ngModel)]="register.name"
+                placeholder="Introduzca su nombre"
+                name="name"
+                minlength="3"
+                class="form-control"
+                required
+                [ngClass]="{'is-valid': !name.invalid, 'is-invalid': name.invalid}"
+            />
+            <div class="invalid-feedback" *ngIf="name.invalid && (name.dirty || name.touched)">
+                <div *ngIf="name.hasError('minlength')">
+                    Introduzca un nombre de pila con 5 caracteres mínimo
+                </div>
+                <div *ngIf="name.hasError('required')">
+                    Introduzca un nombre de pila válido por favor
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <label for="dni" class="form-label"><b>DNI</b></label>
+            <input
+                type="text"
+                #dni="ngModel"
+                [(ngModel)]="register.dni"
+                placeholder="Introduzca la correo electrónico"
+                name="dni"
+                class="form-control"
+                required
+                minlength="8"
+                maxlength="8"
+                [ngClass]="{'is-valid': !dni.invalid, 'is-invalid': dni.invalid}"
+                pattern="[0-9]*$"
+            />
+
+            <div class="invalid-feedback" *ngIf="dni.invalid && (dni.dirty || dni.touched)">
+                <div *ngIf="dni.hasError('required')">
+                    Introduzca un DNI válido por favor.
+                </div>
+                <div *ngIf="dni.errors && dni.hasError('pattern')">
+                    El DNI no sigue el formato correcto.
+                </div>
+                <div *ngIf="dni.hasError('minlength')">
+                    Introduzca un nombre de pila con 8 caracteres mínimo
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-10">
+            <label for="validationCustom04" class="form-label">Estado Civil</label>
+            <select class="form-select" id="validationCustom04" 
+            #estadoCivil="ngModel"
+                [(ngModel)]="register.estadoCivil"
+                placeholder="Introduzca la correo electrónico"
+                name="estadoCivil"
+                class="form-control"
+                required
+                [ngClass]="{'is-valid': !estadoCivil.invalid, 'is-invalid': estadoCivil.invalid}"
+            required>
+              <option selected disabled value="">Seleccione una opcion</option>
+              <option value="Casado">Casado</option>
+              <option value="Soltero">Soltero</option>
+              <option value="Viudo">Viudo</option>
+            </select>
+            <div class="invalid-feedback" *ngIf="estadoCivil.invalid && (estadoCivil.dirty || estadoCivil.touched)">
+                <div *ngIf="dni.hasError('required')">
+                Por favor seleccione una opcion.
+                </div>
+
+            </div>
+          </div>
+
+
+
+        <br>
+        <div class="row">
+            <div class="col-lg">
+                <button type="submit" class="btn btn-primary" [disabled]="!formTemlate.valid">Registrarse</button>
+            </div>
+        </div>
+    </form>
+    
+</div>
+
+<div>
+    <app-tabla-hijo [registrado] ="register"></app-tabla-hijo>
+</div>
+
